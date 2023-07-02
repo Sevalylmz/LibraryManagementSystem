@@ -13,25 +13,25 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace KütüphaneTakipPro.UKontroller
+namespace LibrarySystemPro.UController
 {
     /// <summary>
     /// Interaction logic for ucKitapListesi.xaml
     /// </summary>
-    public partial class ucKitapListesi : UserControl
+    public partial class ucBookList : UserControl
     {
-        public ucKitapListesi()
+        public ucBookList()
         {
             InitializeComponent();
         }
         MainWindow gk=(MainWindow)Application.Current.Windows.OfType<Window>().SingleOrDefault(x=>x.IsActive);
 
-        private void btn_KitapEkle_Click(object sender, RoutedEventArgs e)
+        private void btn_AddBook_Click(object sender, RoutedEventArgs e)
         {
-            winKitapEkle ekle = new winKitapEkle();
-            ekle.Owner = gk;
+            AddBook add = new AddBook();
+            add.Owner = gk;
             gk.Opacity = 0.3; //görüntü şeffaflaştı
-            ekle.ShowDialog();
+            add.ShowDialog();
         }
     }
 }

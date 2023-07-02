@@ -1,10 +1,10 @@
-﻿<Application x:Class="KütüphaneTakipPro.App"
+﻿<Application x:Class="LibrarySystemPro.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:KütüphaneTakipPro"
+             xmlns:local="clr-namespace:LibrarySystemPro"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         <!--Mini Butonlar-->
+         <!--Mini Butons-->
         <Style x:Key="minibutonlar" TargetType="Button">
             <Setter Property="Foreground" Value="#FF787878"/>
             <Setter Property="Width" Value="35"/>
@@ -40,7 +40,7 @@
 
         </Style>
 
-        <!--Menü Butonlar-->
+        <!--Menü Butons-->
         <Style x:Key="menubutonlar" TargetType="ToggleButton">
             <Setter Property="Foreground" Value="#FF787878"/>
             <Setter Property="Margin" Value="0,0,0,1"/>
@@ -83,7 +83,7 @@
 
         </Style>
 
-        <!--uc Butonlar-->
+        <!--uc Butons-->
         <Style x:Key="userKontrolKitapEkleButon" TargetType="Button">
             <Setter Property="Foreground" Value="#FF3691D1"/>
             <Setter Property="Margin" Value="0,0,0,1"/>
@@ -124,7 +124,7 @@
 
         </Style>
         
-        <!--Textboxlar-->
+        <!--Textboxes-->
         <Style x:Key="MoseOverImageChange_Textbox" TargetType="{x:Type TextBox}">
             <Setter Property="Background" Value="White"/>
             <Setter Property="HorizontalContentAlignment" Value="Left"/>
@@ -140,7 +140,7 @@
 
 
         </Style>
-        <!--Kitap Ekle Labeller-->
+        <!--Add Book Label-->
         <Style x:Key="Label_KitapEkle" TargetType="Label">
             <Setter Property="Width" Value="102"/>
             <Setter Property="Height" Value="25"/>
@@ -237,23 +237,7 @@
 
         </Style>
         
-        <!--Dönme Efekti--><!--
-        <Style x:Key="don_dünya" TargetType="Ellipse">
-            <Setter Property="RenderTransformOrigin" Value="0.5,0.5"/>
-            <Style.Triggers>
-                <EventTrigger RoutedEvent="Loaded">
-                    <BeginStoryboard>
-                        <Storyboard>
-                            <DoubleAnimation Storyboard.TargetName="(Ellipse.RenderTransform).(RotateTransform.Angle)" To="360" Duration="0:0:10" RepeatBehavior="Forever"/>
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger>
-            </Style.Triggers>
-        </Style>-->
-
-
-        <!--Combobox Style-->
-
+       
         <!-- Flat ComboBox -->
         <SolidColorBrush x:Key="ComboBoxNormalBorderBrush" Color="#134187" />
         <SolidColorBrush x:Key="ComboBoxNormalBackgroundBrush" Color="#ffffff" />

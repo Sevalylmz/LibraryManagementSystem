@@ -1,9 +1,9 @@
-﻿<Window x:Class="KütüphaneTakipPro.MainWindow"
+﻿<Window x:Class="LibrarySystemPro.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:KütüphaneTakipPro"
+        xmlns:local="clr-namespace:LibrarySystemPro"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="900" Background="{x:Null}" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" AllowsTransparency="True" WindowStyle="None" Loaded="Window_Loaded"> 
     <Grid Margin="15" x:Name="grd_AnaGridWindow">
@@ -18,7 +18,7 @@
             <ColumnDefinition Width="220"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-         <!--Logo ve Buton-->
+         <!--Logo and Buton-->
         <Border Background="#134187" Grid.Column="0" Grid.Row="0" >
             <Grid>
                 <Grid.RowDefinitions>
@@ -28,7 +28,7 @@
                 <Border Grid.Row="0">
                     <DockPanel VerticalAlignment="Center" HorizontalAlignment="Center">
                         <Image Source="images/icon/reader.png" Height="34" Width="34"/>
-                        <Label Content="KÜTÜPHANE PROGRAMI" Foreground="#FFEFEAEA" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="157"/>
+                        <Label Content="LIBRARY PROGRAM " Foreground="#FFEFEAEA" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="157"/>
                     </DockPanel>
                 </Border>
 
@@ -72,7 +72,7 @@
 
             </Grid> 
         </Border>
-        <!--Mini butonlar ve header-->
+        <!--Mini buton and header-->
         <Border Background="#134187" Grid.Column="1" Grid.Row="0"  x:Name="brd_Sagust" MouseDown="brd_Sagust_MouseDown">
             <Grid>
                 <Grid.Effect>
@@ -85,9 +85,9 @@
                 </Grid.RowDefinitions>
                 <Border Background="White" Grid.Row="0">
                    <DockPanel Width="108" HorizontalAlignment="Right" >
-                      <Button Content="__" Style="{DynamicResource minibutonlar}" FontSize="12" x:Name="btn_SimgeDurumu" Click="btn_SimgeDurumu_Click"/>
-                        <Button Content="|  |" Style="{DynamicResource minibutonlar}" FontSize="12" x:Name="btn_TamEkran" Click="btn_TamEkran_Click"/>
-                        <Button Content="X"  x:Name="btn_kapat" Click="btn_kapat_Click" Style="{DynamicResource minibutonlar}" FontSize="12"/>
+                      <Button Content="__" Style="{DynamicResource minibutonlar}" FontSize="12" x:Name="btn_Symbol" Click="btn_Symbol_Click"/>
+                        <Button Content="|  |" Style="{DynamicResource minibutonlar}" FontSize="12" x:Name="btn_FullScreen" Click="btn_FullScreen_Click"/>
+                        <Button Content="X"  x:Name="btn_close" Click="btn_close_Click" Style="{DynamicResource minibutonlar}" FontSize="12"/>
                    </DockPanel>
                 </Border>
 
@@ -103,16 +103,16 @@
                         <Border Grid.Column="0">
                             <StackPanel VerticalAlignment="Center" Margin="30,0,0,0">
                                 <DockPanel>
-                                    <Label Content="Toplam Kitap Sayısı:" Foreground="White" FontSize="18"/>
+                                    <Label Content="Total Number Of Books:" Foreground="White" FontSize="18"/>
                                     <Label Content="1024" Foreground="#FF33FD45" FontSize="18"/>
                                 </DockPanel>
                                 <StackPanel Orientation="Horizontal">
                                     <DockPanel>
-                                        <Label Content="Emanet:" Foreground="White" FontSize="14"/>
+                                        <Label Content="Entrusted:" Foreground="White" FontSize="14"/>
                                         <Label Content="124" Foreground="#FFFDCF33" FontSize="14"/>
                                     </DockPanel>
                                     <DockPanel>
-                                        <Label Content="Süresi Dolan:" Foreground="White" FontSize="14"/>
+                                        <Label Content="Expired:" Foreground="White" FontSize="14"/>
                                         <Label Content="14" Foreground="#FFF56161" FontSize="14"/>
                                     </DockPanel>
                                 </StackPanel>
@@ -123,10 +123,10 @@
                         <Border Grid.Column="1">
                             <Border Width="220" Height="120" CornerRadius="10,10,10,10">
                                 <StackPanel Orientation="Horizontal">
-                                    <Image Source="images/pencereresim/woman.png" Width="100" />
+                                    <Image Source="images/winimage/woman.png" Width="100" />
                                     <StackPanel VerticalAlignment="Center" Margin="3,0,0,0">
                                         <Label Content="Seval Yılmaz" Background="#FFB183D0" Foreground="White" FontWeight="Bold"/>
-                                        <Label Content="Yönetici" Background="#FF694B8A" Foreground="White" FontWeight="Bold"/>
+                                        <Label Content="Manager" Background="#FF694B8A" Foreground="White" FontWeight="Bold"/>
                                     </StackPanel>
                                 </StackPanel>
                             </Border>
@@ -136,7 +136,7 @@
                 </Border>
             </Grid>
         </Border>
-        <!--menü butonlar ve header-->
+        <!--menü buton and header-->
         <Border Background="#134187" Grid.Column="0" Grid.Row="1" >
             <Grid>
                 <Grid.RowDefinitions>
@@ -145,50 +145,50 @@
                 </Grid.RowDefinitions>
 
                 <StackPanel Grid.Row="0" >
-                    <ToggleButton Height="50" Style="{DynamicResource menubutonlar}" HorizontalContentAlignment="Left" x:Name="menubuton_kitaplistesi" Click="menubuton_kitaplistesi_Click_1">
+                    <ToggleButton Height="50" Style="{DynamicResource menubutonlar}" HorizontalContentAlignment="Left" x:Name="menubuton_BookList" Click="menubuton_BookList_Click_1">
                         <DockPanel Width="220" Margin="15,0,0,0">
                             <Image Source="images/icon/list.png" Width="32"/>
-                            <Label Content="Kitap Listesi" Foreground="White" FontSize="16"/>
+                            <Label Content="Book List" Foreground="White" FontSize="16"/>
                         </DockPanel>
 
                     </ToggleButton>
 
-                    <ToggleButton Height="50" Style="{DynamicResource menubutonlar}" x:Name="menubuton_okuyuculistesi" Click="menubuton_okuyuculistesi_Click" >
+                    <ToggleButton Height="50" Style="{DynamicResource menubutonlar}" x:Name="menubuton_ReaderList" Click="menubuton_ReaderList_Click" >
                         <DockPanel Width="220" Margin="15,0,0,0">
                             <Image Source="images/icon/read.png" Width="32"/>
-                            <Label Content="Okuyucu Listesi" Foreground="White" FontSize="16"/>
+                            <Label Content="Reader List" Foreground="White" FontSize="16"/>
                         </DockPanel>
 
                     </ToggleButton>
 
-                    <ToggleButton Height="50" Style="{DynamicResource menubutonlar}" x:Name="menubuton_emanetlistesi" Click="menubuton_emanetlistesi_Click"  >
+                    <ToggleButton Height="50" Style="{DynamicResource menubutonlar}" x:Name="menubuton_EscrowList" Click="menubuton_EscrowList_Click"  >
                         <DockPanel Width="220" Margin="15,0,0,0">
                             <Image Source="images/icon/books.png" Width="32"/>
-                            <Label Content="Emanet Listesi" Foreground="White" FontSize="16"/>
+                            <Label Content="Escrow List" Foreground="White" FontSize="16"/>
                         </DockPanel>
 
                     </ToggleButton>
 
-                    <ToggleButton Height="50" Style="{DynamicResource menubutonlar}" x:Name="menubuton_zamanidolanlar" Click="menubuton_zamanidolanlar_Click"  >
+                    <ToggleButton Height="50" Style="{DynamicResource menubutonlar}" x:Name="menubuton_OutOfTime" Click="menubuton_OutOfTime_Click"  >
                         <DockPanel Width="220" Margin="15,0,0,0">
                             <Image Source="images/icon/calender.png" Width="32"/>
-                            <Label Content="Zamanı Dolanlar" Foreground="White" FontSize="16"/>
+                            <Label Content="Out Of Time" Foreground="White" FontSize="16"/>
                         </DockPanel>
 
                     </ToggleButton>
 
-                    <ToggleButton Height="50" Style="{DynamicResource menubutonlar}" x:Name="menubuton_ayarlar"  Click="menubuton_ayarlar_Click"  >
+                    <ToggleButton Height="50" Style="{DynamicResource menubutonlar}" x:Name="menubuton_Settings"  Click="menubuton_Settings_Click"  >
                         <DockPanel Width="220" Margin="15,0,0,0">
                             <Image Source="images/icon/setting.png" Width="32"/>
-                            <Label Content="Ayarlar" Foreground="White" FontSize="16"/>
+                            <Label Content="Settings" Foreground="White" FontSize="16"/>
                         </DockPanel>
 
                     </ToggleButton>
 
-                    <ToggleButton Height="50" Style="{DynamicResource menubutonlar}" x:Name="menubuton_hakkinda" Click="menubuton_hakkinda_Click" >
+                    <ToggleButton Height="50" Style="{DynamicResource menubutonlar}" x:Name="menubuton_About" Click="menubuton_About_Click" >
                         <DockPanel Width="220" Margin="15,0,0,0">
                             <Image Source="images/icon/abouth.png" Width="32"/>
-                            <Label Content="Hakkında" Foreground="White" FontSize="16"/>
+                            <Label Content="About" Foreground="White" FontSize="16"/>
                         </DockPanel>
 
                     </ToggleButton>
@@ -218,7 +218,7 @@
             </StackPanel>
             </Grid>
         </Border>
-        <!--Contetn içerik-->
+        <!--Content-->
         <Border  Grid.Column="1" Grid.Row="1" Background="#FFEEEEEE">
             <Grid x:Name="Content_icerik" Margin="0,0,10,0">
                 

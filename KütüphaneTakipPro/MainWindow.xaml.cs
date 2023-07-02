@@ -1,8 +1,8 @@
 ﻿
 
 
-using KütüphaneTakipPro.classlar;
-using KütüphaneTakipPro.UKontroller;
+using LibrarySystemPro.classlar;
+using LibrarySystemPro.UController;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +18,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace KütüphaneTakipPro
+namespace LibrarySystemPro
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -32,7 +32,7 @@ namespace KütüphaneTakipPro
             this.MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
         }
 
-        private void btn_kapat_Click(object sender, RoutedEventArgs e)
+        private void btn_close_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
@@ -46,17 +46,17 @@ namespace KütüphaneTakipPro
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            uc_cagir.Uc_Ekle(Content_icerik,new ucKitapListesi());
+            uc_cagir.Uc_Ekle(Content_icerik,new ucBookList());
             //DBbaglanti.BagTest();
             //Versiyon.Content = DBbaglanti.BagDurum;
         }
 
-        private void btn_SimgeDurumu_Click(object sender, RoutedEventArgs e)
+        private void btn_Symbol_Click(object sender, RoutedEventArgs e)
         {
             this.WindowState=WindowState.Minimized;
         }
 
-        private void btn_TamEkran_Click(object sender, RoutedEventArgs e)
+        private void btn_FullScreen_Click(object sender, RoutedEventArgs e)
         {
             if (this.WindowState==WindowState.Normal)
             {
@@ -74,37 +74,37 @@ namespace KütüphaneTakipPro
         #region menubutonlar
 
         int secimdurumu;
-        private void menubuton_kitaplistesi_Click_1(object sender, RoutedEventArgs e)
+        private void menubuton_BookList_Click_1(object sender, RoutedEventArgs e)
         {
-            uc_cagir.Uc_Ekle(Content_icerik, new ucKitapListesi());
+            uc_cagir.Uc_Ekle(Content_icerik, new ucBookList());
             secimdurumu = 1;
             secilendurum();
         }
-        private void menubuton_okuyuculistesi_Click(object sender, RoutedEventArgs e)
+        private void menubuton_ReaderList_Click(object sender, RoutedEventArgs e)
         {
             secimdurumu=2;
             secilendurum();
         }
 
-        private void menubuton_emanetlistesi_Click(object sender, RoutedEventArgs e)
+        private void menubuton_EscrowList_Click(object sender, RoutedEventArgs e)
         {
             secimdurumu = 3;
             secilendurum();
         }
 
-        private void menubuton_zamanidolanlar_Click(object sender, RoutedEventArgs e)
+        private void menubuton_OutOfTime_Click(object sender, RoutedEventArgs e)
         {
             secimdurumu = 4;
             secilendurum();
         }
 
-        private void menubuton_ayarlar_Click(object sender, RoutedEventArgs e)
+        private void menubuton_Settings_Click(object sender, RoutedEventArgs e)
         {
             secimdurumu = 5;
             secilendurum();
         }
 
-        private void menubuton_hakkinda_Click(object sender, RoutedEventArgs e)
+        private void menubuton_About_Click(object sender, RoutedEventArgs e)
         {
             secimdurumu = 6;
             secilendurum();
@@ -115,51 +115,51 @@ namespace KütüphaneTakipPro
         {
             if (secimdurumu==1)
             {
-                menubuton_kitaplistesi.IsChecked = true;
+                menubuton_BookList.IsChecked = true;
             }
             else
             {
-                menubuton_kitaplistesi.IsChecked=false;
+                menubuton_BookList.IsChecked=false;
             }
             if (secimdurumu == 2)
             {
-                menubuton_okuyuculistesi.IsChecked = true;
+                menubuton_ReaderList.IsChecked = true;
             }
             else
             {
-                menubuton_okuyuculistesi.IsChecked = false;
+                menubuton_ReaderList.IsChecked = false;
             }
             if (secimdurumu == 3)
             {
-                menubuton_emanetlistesi.IsChecked = true;
+                menubuton_EscrowList.IsChecked = true;
             }
             else
             {
-                menubuton_emanetlistesi.IsChecked = false;
+                menubuton_EscrowList.IsChecked = false;
             }
             if (secimdurumu == 4)
             {
-                menubuton_zamanidolanlar.IsChecked = true;
+                menubuton_OutOfTime.IsChecked = true;
             }
             else
             {
-                menubuton_zamanidolanlar.IsChecked = false;
+                menubuton_OutOfTime.IsChecked = false;
             }
             if (secimdurumu == 5)
             {
-                menubuton_ayarlar.IsChecked = true;
+                menubuton_Settings.IsChecked = true;
             }
             else
             {
-                menubuton_ayarlar.IsChecked = false;
+                menubuton_Settings.IsChecked = false;
             }
             if (secimdurumu == 6)
             {
-                menubuton_hakkinda.IsChecked = true;
+                menubuton_About.IsChecked = true;
             }
             else
             {
-                menubuton_hakkinda.IsChecked = false;
+                menubuton_About.IsChecked = false;
             }
         }
         #endregion

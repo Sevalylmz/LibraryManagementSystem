@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KütüphaneTakipPro.classlar
+namespace LibrarySystemPro.classlar
 {
-    public class DBbaglanti
+    public class DbConnection
     {
         public static string DBadres = @"Data Source=" + Environment.CurrentDirectory + "\\DB\\kitap.db;Version=3;New=False;Compress=True;Read Only=False;";
 
@@ -22,17 +22,17 @@ namespace KütüphaneTakipPro.classlar
                     try 
                     { 
                         conn.Open();
-                        BagDurum = "VeriTabanına Bağlanıldı ...";
+                        BagDurum = "Connected to database ...";
                     } 
                     catch 
                     { 
-                        BagDurum="VeriTabanı Bağlantı Hatası ...";
+                        BagDurum="Connection error ...";
                     }
 
                 }
                 else
                 {
-                    BagDurum = "VeriTabanına Bağlanıldı ...";
+                    BagDurum = "Connected to database ...";
                 }
 
             }

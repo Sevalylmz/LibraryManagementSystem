@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Controls.Primitives;
 using System.Windows.Threading;
 
-namespace KütüphaneTakipPro.classlar
+namespace LibrarySystemPro.classlar
 {
     public class Bonus
     {
